@@ -1,0 +1,155 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Modal — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root (overlay container) ── */
+.root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--uil-z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 4rem 1rem 2rem;
+  animation: uilFadeIn 0.15s ease-out;
+}
+
+.centered {
+  align-items: center;
+  padding: 1rem;
+}
+
+/* ── Mask ── */
+.mask {
+  position: fixed;
+  inset: 0;
+  background: oklch(0 0 0 / 0.45);
+  animation: uilFadeInMask 0.15s ease-out;
+}
+
+/* ── Wrapper (dialog) ── */
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: var(--uil-bg);
+  border-radius: var(--uil-radius-lg);
+  box-shadow: var(--uil-shadow-xl);
+  max-height: calc(100vh - 6rem);
+  overflow: hidden;
+  animation: uilSlideUp 0.2s ease-out;
+  z-index: 1;
+}
+
+/* ── Sizes ── */
+.sizeSm {
+  max-width: 400px;
+}
+
+.sizeMd {
+  max-width: 520px;
+}
+
+.sizeLg {
+  max-width: 640px;
+}
+
+.sizeXl {
+  max-width: 800px;
+}
+
+.sizeFullscreen {
+  max-width: 100vw;
+  min-height: 100vh;
+  border-radius: 0;
+  max-height: 100vh;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: var(--uil-space-4) var(--uil-space-5);
+  border-bottom: 1px solid var(--uil-border);
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: var(--uil-font-size-lg);
+  font-weight: var(--uil-font-weight-semibold);
+  color: var(--uil-fg);
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.closeBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.25rem;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: var(--uil-fg-tertiary);
+  border-radius: var(--uil-radius-sm);
+  transition: color var(--uil-transition-fast), background var(--uil-transition-fast);
+  flex-shrink: 0;
+}
+
+.closeBtn:hover {
+  color: var(--uil-fg);
+  background: var(--uil-bg-secondary);
+}
+
+/* ── Body ── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--uil-space-4) var(--uil-space-5);
+  font-size: var(--uil-font-size-md);
+  line-height: var(--uil-line-height);
+  color: var(--uil-fg);
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: var(--uil-space-3) var(--uil-space-5);
+  border-top: 1px solid var(--uil-border);
+  background: var(--uil-bg-secondary);
+  flex-shrink: 0;
+}
+
+/* ── Animations ── */
+@keyframes uilFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes uilFadeInMask {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes uilSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

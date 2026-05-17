@@ -1,0 +1,98 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Typography / Text — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root ── */
+.root {
+  margin: 0;
+  font-family: var(--uil-font-sans);
+  line-height: var(--uil-line-height);
+}
+
+/* ── Variants ── */
+.variantBody {
+  font-size: var(--uil-font-size-md);
+  font-weight: var(--uil-font-weight-normal);
+}
+
+.variantCaption {
+  font-size: var(--uil-font-size-sm);
+  font-weight: var(--uil-font-weight-normal);
+}
+
+.variantLabel {
+  font-size: var(--uil-font-size-md);
+  font-weight: var(--uil-font-weight-medium);
+}
+
+.variantHelp {
+  font-size: var(--uil-font-size-xs);
+  font-weight: var(--uil-font-weight-normal);
+  line-height: 1.4;
+}
+
+.variantError {
+  font-size: var(--uil-font-size-xs);
+  font-weight: var(--uil-font-weight-normal);
+  color: var(--uil-danger);
+  line-height: 1.4;
+}
+
+/* ── Weights ── */
+.weightNormal {
+  font-weight: var(--uil-font-weight-normal);
+}
+
+.weightMedium {
+  font-weight: var(--uil-font-weight-medium);
+}
+
+.weightSemibold {
+  font-weight: var(--uil-font-weight-semibold);
+}
+
+.weightBold {
+  font-weight: var(--uil-font-weight-bold);
+}
+
+/* ── Colours ── */
+.colorDefault {
+  color: var(--uil-fg);
+}
+
+.colorSecondary {
+  color: var(--uil-fg-secondary);
+}
+
+.colorTertiary {
+  color: var(--uil-fg-tertiary);
+}
+
+.colorAccent {
+  color: var(--uil-accent);
+}
+
+.colorError {
+  color: var(--uil-danger);
+}
+
+.colorSuccess {
+  color: var(--uil-success);
+}
+
+.colorWarning {
+  color: var(--uil-warning);
+}
+
+.colorInverse {
+  color: var(--uil-fg-inverse);
+}
+
+/* ── Truncate ── */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

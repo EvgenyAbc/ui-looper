@@ -1,0 +1,93 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Tag — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root ── */
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-family: var(--uil-font-sans);
+  font-weight: var(--uil-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  user-select: none;
+  border-radius: var(--uil-radius-sm);
+  border: 1px solid transparent;
+}
+
+/* ── Sizes ── */
+.sizeSm {
+  padding: 0.1rem 0.4rem;
+  font-size: var(--uil-font-size-xs);
+  min-height: 1.25rem;
+}
+
+.sizeMd {
+  padding: 0.2rem 0.5rem;
+  font-size: var(--uil-font-size-sm);
+  min-height: 1.5rem;
+}
+
+/* ── Variants ── */
+.variantDefault {
+  background: var(--uil-bg-secondary);
+  color: var(--uil-fg-secondary);
+  border-color: var(--uil-border);
+}
+
+.variantPrimary {
+  background: var(--uil-primary);
+  color: var(--uil-primary-fg);
+  border-color: var(--uil-primary);
+}
+
+.variantAccent {
+  background: var(--uil-accent-soft);
+  color: var(--uil-accent);
+  border-color: var(--uil-accent-soft);
+}
+
+.variantSuccess {
+  background: oklch(0.9 0.06 149);
+  color: var(--uil-success);
+}
+
+.variantWarning {
+  background: oklch(0.92 0.08 85);
+  color: oklch(0.55 0.15 85);
+}
+
+.variantDanger {
+  background: var(--uil-danger-soft);
+  color: var(--uil-danger);
+}
+
+/* ── Label ── */
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+/* ── Close button ── */
+.close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.1em;
+  line-height: 1;
+  color: inherit;
+  opacity: 0.6;
+  transition: opacity var(--uil-transition-fast);
+}
+
+.close:hover {
+  opacity: 1;
+}

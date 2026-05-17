@@ -1,0 +1,162 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Toast — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Container ── */
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  z-index: var(--uil-z-toast);
+  pointer-events: none;
+  max-width: 24rem;
+  width: 100%;
+}
+
+/* ── Positions ── */
+.positionTopRight {
+  top: 1rem;
+  right: 1rem;
+}
+
+.positionTopLeft {
+  top: 1rem;
+  left: 1rem;
+}
+
+.positionTopCenter {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.positionBottomRight {
+  bottom: 1rem;
+  right: 1rem;
+  flex-direction: column-reverse;
+}
+
+.positionBottomLeft {
+  bottom: 1rem;
+  left: 1rem;
+  flex-direction: column-reverse;
+}
+
+.positionBottomCenter {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-direction: column-reverse;
+}
+
+/* ── Item ── */
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: var(--uil-bg);
+  border: 1px solid var(--uil-border);
+  border-radius: var(--uil-radius-md);
+  box-shadow: var(--uil-shadow-lg);
+  pointer-events: auto;
+  animation: uilToastSlideIn 0.25s ease-out;
+  max-width: 100%;
+}
+
+/* ── Type variants ── */
+.typeInfo {
+  border-left: 3px solid var(--uil-info);
+}
+
+.typeSuccess {
+  border-left: 3px solid var(--uil-success);
+}
+
+.typeWarning {
+  border-left: 3px solid var(--uil-warning);
+}
+
+.typeError {
+  border-left: 3px solid var(--uil-danger);
+}
+
+/* ── Icon ── */
+.itemIcon {
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  line-height: 1.4;
+}
+
+/* ── Content ── */
+.itemContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemMessage {
+  font-size: var(--uil-font-size-md);
+  font-weight: var(--uil-font-weight-medium);
+  color: var(--uil-fg);
+  line-height: 1.4;
+}
+
+.itemDescription {
+  font-size: var(--uil-font-size-sm);
+  color: var(--uil-fg-secondary);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+/* ── Action ── */
+.itemAction {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.15rem 0.4rem;
+  font-size: var(--uil-font-size-sm);
+  font-weight: var(--uil-font-weight-semibold);
+  color: var(--uil-accent);
+  border-radius: var(--uil-radius-sm);
+  transition: background var(--uil-transition-fast);
+}
+
+.itemAction:hover {
+  background: var(--uil-accent-soft);
+}
+
+/* ── Close ── */
+.itemClose {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.1rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--uil-fg-tertiary);
+  opacity: 0.6;
+  transition: opacity var(--uil-transition-fast);
+}
+
+.itemClose:hover {
+  opacity: 1;
+}
+
+/* ── Animations ── */
+@keyframes uilToastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

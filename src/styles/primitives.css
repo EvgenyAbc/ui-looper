@@ -1,0 +1,86 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  @ui-looper/core — UI Primitives
+ *  ═══════════════════════════════════════════════════════════════
+ *
+ *  Global baseline styles + agnostic utility classes.
+ *  Requires `tokens.css` on the same document (import tokens before this).
+ *
+ *  Components use CSS Modules; this file provides:
+ *    - CSS reset / box-sizing
+ *    - Body defaults
+ *    - Focus-visible ring
+ *    - Responsive utilities
+ */
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--uil-bg);
+  color: var(--uil-fg);
+  line-height: var(--uil-line-height);
+  font-family: var(--uil-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Focus ring (consistent across components) ── */
+:focus-visible {
+  outline: 2px solid var(--uil-accent);
+  outline-offset: 2px;
+}
+
+/* ── SVG / icon helpers ── */
+.uil-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.uil-icon--left {
+  margin-right: 0.35em;
+}
+
+.uil-icon--right {
+  margin-left: 0.35em;
+}
+
+/* ── Text truncation ── */
+.uil-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Screen reader only ── */
+.uil-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Motion preference ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,55 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Typography / Heading — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root ── */
+.root {
+  margin: 0;
+  font-family: var(--uil-font-sans);
+  font-weight: var(--uil-font-weight-bold);
+  line-height: 1.3;
+  color: var(--uil-fg);
+}
+
+/* ── Levels ── */
+.levelH1 {
+  font-size: var(--uil-font-size-2xl);
+  letter-spacing: -0.02em;
+}
+
+.levelH2 {
+  font-size: var(--uil-font-size-xl);
+  letter-spacing: -0.01em;
+}
+
+.levelH3 {
+  font-size: var(--uil-font-size-lg);
+}
+
+.levelH4 {
+  font-size: var(--uil-font-size-md);
+  font-weight: var(--uil-font-weight-semibold);
+}
+
+.levelH5 {
+  font-size: var(--uil-font-size-sm);
+  font-weight: var(--uil-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.levelH6 {
+  font-size: var(--uil-font-size-xs);
+  font-weight: var(--uil-font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Truncate ── */
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,297 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Select — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root ── */
+.root {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  font-family: var(--uil-font-sans);
+  font-size: var(--uil-font-size-md);
+  color: var(--uil-fg);
+  max-width: 100%;
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Statuses ── */
+.statusError .trigger {
+  border-color: var(--uil-danger);
+}
+
+.statusWarning .trigger {
+  border-color: var(--uil-warning);
+}
+
+.statusSuccess .trigger {
+  border-color: var(--uil-success);
+}
+
+/* ── Trigger ── */
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.5rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--uil-border);
+  border-radius: var(--uil-radius-md);
+  background: var(--uil-bg);
+  cursor: pointer;
+  user-select: none;
+  transition:
+    border-color var(--uil-transition-fast),
+    box-shadow var(--uil-transition-fast);
+}
+
+.trigger:hover {
+  border-color: var(--uil-border-hover);
+}
+
+.triggerOpen {
+  border-color: var(--uil-accent);
+  box-shadow: 0 0 0 2px var(--uil-accent-soft);
+}
+
+.root:focus-within .trigger {
+  border-color: var(--uil-accent);
+  box-shadow: 0 0 0 2px var(--uil-accent-soft);
+}
+
+/* ── Display area ── */
+.display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.singleValue {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.placeholder {
+  color: var(--uil-fg-tertiary);
+}
+
+/* ── Tags (multiple mode) ── */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 0.05rem 0.35rem;
+  background: var(--uil-bg-secondary);
+  border: 1px solid var(--uil-border);
+  border-radius: var(--uil-radius-sm);
+  font-size: var(--uil-font-size-sm);
+  line-height: 1.3;
+}
+
+.tagLabel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 8rem;
+}
+
+.tagRemove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.1em;
+  line-height: 1;
+  color: var(--uil-fg-tertiary);
+}
+
+.tagRemove:hover {
+  color: var(--uil-fg);
+}
+
+.tagOverflow {
+  font-size: var(--uil-font-size-sm);
+  color: var(--uil-fg-secondary);
+}
+
+/* ── Indicators ── */
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.clearBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.1em;
+  line-height: 1;
+  color: var(--uil-fg-tertiary);
+  opacity: 0;
+  transition: opacity var(--uil-transition-fast);
+}
+
+.trigger:hover .clearBtn {
+  opacity: 1;
+}
+
+.clearBtn:hover {
+  color: var(--uil-fg);
+}
+
+.arrow {
+  font-size: 0.6em;
+  color: var(--uil-fg-tertiary);
+  transition: transform var(--uil-transition-fast);
+  line-height: 1;
+}
+
+.arrowUp {
+  transform: rotate(180deg);
+}
+
+/* ── Popup ── */
+.popup {
+  z-index: var(--uil-z-dropdown);
+  background: var(--uil-bg);
+  border: 1px solid var(--uil-border);
+  border-radius: var(--uil-radius-md);
+  box-shadow: var(--uil-shadow-lg);
+  overflow: hidden;
+  animation: uilFadeIn 0.12s ease-out;
+  max-height: 18rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Search ── */
+.searchWrapper {
+  padding: 0.35rem;
+  border-bottom: 1px solid var(--uil-border);
+}
+
+.searchInput {
+  width: 100%;
+  border: 1px solid var(--uil-border);
+  border-radius: var(--uil-radius-sm);
+  padding: 0.3rem 0.5rem;
+  font-family: var(--uil-font-sans);
+  font-size: var(--uil-font-size-sm);
+  color: var(--uil-fg);
+  background: var(--uil-bg);
+  outline: none;
+}
+
+.searchInput:focus {
+  border-color: var(--uil-accent);
+}
+
+/* ── Option list ── */
+.optionList {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.25rem;
+}
+
+.notFound {
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+  color: var(--uil-fg-tertiary);
+  font-size: var(--uil-font-size-sm);
+}
+
+/* ── Option ── */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--uil-radius-sm);
+  cursor: pointer;
+  font-size: var(--uil-font-size-md);
+  transition: background var(--uil-transition-fast);
+}
+
+.option:hover,
+.optionActive {
+  background: var(--uil-bg-secondary);
+}
+
+.optionSelected {
+  color: var(--uil-accent);
+  font-weight: var(--uil-font-weight-medium);
+}
+
+.optionDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Checkbox (multiple mode) ── */
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid var(--uil-border-strong);
+  border-radius: 3px;
+  font-size: 0.65em;
+  flex-shrink: 0;
+  transition: all var(--uil-transition-fast);
+}
+
+.checkboxChecked {
+  background: var(--uil-accent);
+  border-color: var(--uil-accent);
+  color: var(--uil-accent-fg);
+}
+
+.optionLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Group label ── */
+.groupLabel {
+  padding: 0.4rem 0.5rem 0.2rem;
+  font-size: var(--uil-font-size-xs);
+  font-weight: var(--uil-font-weight-semibold);
+  color: var(--uil-fg-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Animations ── */
+@keyframes uilFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

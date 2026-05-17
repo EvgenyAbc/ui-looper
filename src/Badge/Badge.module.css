@@ -1,0 +1,81 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Badge — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root (relative wrapper) ── */
+.root {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Standalone: no children wrapper */
+.standalone {
+  display: inline-flex;
+}
+
+.standaloneRoot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* ── Variants ── */
+.variantPrimary {
+  --uil-badge-bg: var(--uil-primary);
+  --uil-badge-fg: var(--uil-primary-fg);
+}
+
+.variantAccent {
+  --uil-badge-bg: var(--uil-accent);
+  --uil-badge-fg: var(--uil-accent-fg);
+}
+
+.variantSuccess {
+  --uil-badge-bg: var(--uil-success);
+  --uil-badge-fg: oklch(0.985 0 0);
+}
+
+.variantWarning {
+  --uil-badge-bg: var(--uil-warning);
+  --uil-badge-fg: oklch(0.145 0 0);
+}
+
+.variantDanger {
+  --uil-badge-bg: var(--uil-danger);
+  --uil-badge-fg: var(--uil-danger-fg);
+}
+
+/* ── Sup (badge element) ── */
+.sup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.1rem;
+  height: 1.1rem;
+  padding: 0 0.3rem;
+  background: var(--uil-badge-bg);
+  color: var(--uil-badge-fg);
+  font-size: var(--uil-font-size-xs);
+  font-weight: var(--uil-font-weight-bold);
+  line-height: 1;
+  border-radius: var(--uil-radius-full);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.supDot {
+  min-width: unset;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+  border-radius: 50%;
+}

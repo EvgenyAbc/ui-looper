@@ -1,0 +1,153 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  @ui-looper/core — Design Tokens
+ *  ═══════════════════════════════════════════════════════════════
+ *
+ *  CSS custom properties for the entire design system.
+ *  Import once in your shell (or any host) before using components.
+ *
+ *  USAGE (shell):
+ *    import '@ui-looper/core/styles/tokens.css';
+ *    import '@ui-looper/core/styles/primitives.css';
+ *
+ *  Tokens follow OKLCH color space for wide gamut + perceptual uniformity.
+ *  All component styles reference these vars — no hardcoded colors.
+ */
+
+/* ── Light theme (default) ── */
+:root,
+[data-theme='light'],
+[data-ui-theme='light'] {
+  /* Surfaces */
+  --uil-bg: oklch(0.985 0 0);
+  --uil-bg-secondary: oklch(1 0 0);
+  --uil-bg-tertiary: oklch(0.955 0.003 264);
+
+  /* Foreground */
+  --uil-fg: oklch(0.145 0 0);
+  --uil-fg-secondary: oklch(0.556 0 0);
+  --uil-fg-tertiary: oklch(0.708 0 0);
+  --uil-fg-inverse: oklch(0.985 0 0);
+
+  /* Brand / accent */
+  --uil-accent: oklch(0.6 0.19 260);
+  --uil-accent-hover: oklch(0.55 0.2 260);
+  --uil-accent-active: oklch(0.48 0.22 260);
+  --uil-accent-fg: oklch(0.985 0 0);
+  --uil-accent-soft: oklch(0.9 0.05 260);
+
+  /* Semantic */
+  --uil-primary: oklch(0.205 0 0);
+  --uil-primary-hover: oklch(0.3 0 0);
+  --uil-primary-active: oklch(0.145 0 0);
+  --uil-primary-fg: oklch(0.985 0 0);
+
+  --uil-danger: oklch(0.577 0.245 27.325);
+  --uil-danger-hover: oklch(0.52 0.27 28);
+  --uil-danger-active: oklch(0.45 0.28 29);
+  --uil-danger-fg: oklch(0.985 0 0);
+  --uil-danger-soft: oklch(0.93 0.06 28);
+
+  --uil-success: oklch(0.623 0.214 149.214);
+  --uil-warning: oklch(0.75 0.18 85);
+  --uil-info: oklch(0.6 0.15 250);
+
+  /* Borders */
+  --uil-border: oklch(0.922 0 0);
+  --uil-border-hover: oklch(0.85 0 0);
+  --uil-border-strong: oklch(0.78 0 0);
+  --uil-radius-sm: 0.35rem;
+  --uil-radius-md: 0.5rem;
+  --uil-radius-lg: 0.75rem;
+  --uil-radius-xl: 1rem;
+  --uil-radius-full: 9999px;
+
+  /* Shadows */
+  --uil-shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.04);
+  --uil-shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.06), 0 1px 2px hsl(0 0% 0% / 0.04);
+  --uil-shadow-md: 0 4px 6px hsl(0 0% 0% / 0.06), 0 2px 4px hsl(0 0% 0% / 0.04);
+  --uil-shadow-lg: 0 10px 15px hsl(0 0% 0% / 0.08), 0 4px 6px hsl(0 0% 0% / 0.04);
+  --uil-shadow-xl: 0 20px 25px hsl(0 0% 0% / 0.10), 0 8px 10px hsl(0 0% 0% / 0.04);
+
+  /* Typography */
+  --uil-font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Inter',
+    Ubuntu, Cantarell, 'Noto Sans', sans-serif;
+  --uil-font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono',
+    'Cascadia Code', monospace;
+  --uil-font-size-xs: 0.75rem;
+  --uil-font-size-sm: 0.85rem;
+  --uil-font-size-md: 0.925rem;
+  --uil-font-size-lg: 1.05rem;
+  --uil-font-size-xl: 1.25rem;
+  --uil-font-size-2xl: 1.5rem;
+  --uil-font-weight-normal: 400;
+  --uil-font-weight-medium: 500;
+  --uil-font-weight-semibold: 600;
+  --uil-font-weight-bold: 700;
+  --uil-line-height: 1.55;
+
+  /* Spacing */
+  --uil-space-1: 0.25rem;
+  --uil-space-2: 0.5rem;
+  --uil-space-3: 0.75rem;
+  --uil-space-4: 1rem;
+  --uil-space-5: 1.25rem;
+  --uil-space-6: 1.5rem;
+  --uil-space-8: 2rem;
+
+  /* Transitions */
+  --uil-transition-fast: 0.12s ease;
+  --uil-transition: 0.2s ease;
+  --uil-transition-slow: 0.3s ease;
+
+  /* Z-index scale */
+  --uil-z-base: 0;
+  --uil-z-dropdown: 100;
+  --uil-z-overlay: 200;
+  --uil-z-modal: 300;
+  --uil-z-toast: 400;
+}
+
+/* ── Dark theme ── */
+[data-theme='dark'],
+[data-ui-theme='dark'] {
+  --uil-bg: oklch(0.145 0 0);
+  --uil-bg-secondary: oklch(0.185 0 0);
+  --uil-bg-tertiary: oklch(0.22 0 0);
+
+  --uil-fg: oklch(0.985 0 0);
+  --uil-fg-secondary: oklch(0.708 0 0);
+  --uil-fg-tertiary: oklch(0.556 0 0);
+  --uil-fg-inverse: oklch(0.145 0 0);
+
+  --uil-accent: oklch(0.62 0.19 260);
+  --uil-accent-hover: oklch(0.67 0.18 260);
+  --uil-accent-active: oklch(0.73 0.16 260);
+  --uil-accent-fg: oklch(0.985 0 0);
+  --uil-accent-soft: oklch(0.25 0.06 260);
+
+  --uil-primary: oklch(0.985 0 0);
+  --uil-primary-hover: oklch(0.92 0 0);
+  --uil-primary-active: oklch(0.85 0 0);
+  --uil-primary-fg: oklch(0.145 0 0);
+
+  --uil-danger: oklch(0.704 0.191 22.216);
+  --uil-danger-hover: oklch(0.75 0.18 22);
+  --uil-danger-active: oklch(0.8 0.16 22);
+  --uil-danger-fg: oklch(0.985 0 0);
+  --uil-danger-soft: oklch(0.28 0.06 22);
+
+  --uil-success: oklch(0.687 0.162 148.177);
+  --uil-warning: oklch(0.78 0.16 85);
+  --uil-info: oklch(0.65 0.14 250);
+
+  --uil-border: oklch(0.269 0 0);
+  --uil-border-hover: oklch(0.35 0 0);
+  --uil-border-strong: oklch(0.45 0 0);
+
+  --uil-shadow-xs: 0 1px 2px hsl(0 0% 0% / 0.2);
+  --uil-shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.25);
+  --uil-shadow-md: 0 4px 6px hsl(0 0% 0% / 0.3);
+  --uil-shadow-lg: 0 10px 15px hsl(0 0% 0% / 0.35);
+  --uil-shadow-xl: 0 20px 25px hsl(0 0% 0% / 0.4);
+}

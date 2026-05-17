@@ -1,0 +1,86 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Tooltip — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ *
+ *  Floating overlay positioned via inline styles.
+ *  Arrow + fade-in animation handled here.
+ */
+
+/* ── Trigger wrapper ── */
+.trigger {
+  display: inline-flex;
+  cursor: pointer;
+}
+
+/* ── Root (overlay) ── */
+.root {
+  z-index: var(--uil-z-dropdown);
+  pointer-events: none;
+  animation: uilFadeIn 0.15s ease-out;
+}
+
+/* ── Body ── */
+.body {
+  display: block;
+  padding: 0.3rem 0.6rem;
+  background: var(--uil-primary);
+  color: var(--uil-primary-fg);
+  font-size: var(--uil-font-size-sm);
+  font-family: var(--uil-font-sans);
+  line-height: 1.4;
+  border-radius: var(--uil-radius-sm);
+  white-space: nowrap;
+  box-shadow: var(--uil-shadow-sm);
+}
+
+/* ── Arrow ── */
+.arrow {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: var(--uil-primary);
+  transform: rotate(45deg);
+}
+
+/* Arrow positions by placement */
+
+/* Top → arrow at bottom center, pointing down */
+.placeTop .arrow {
+  bottom: -3px;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Bottom → arrow at top center, pointing up */
+.placeBottom .arrow {
+  top: -3px;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Left → arrow at right center, pointing right */
+.placeLeft .arrow {
+  right: -3px;
+  top: 50%;
+  margin-top: -3px;
+}
+
+/* Right → arrow at left center, pointing left */
+.placeRight .arrow {
+  left: -3px;
+  top: 50%;
+  margin-top: -3px;
+}
+
+/* ── Animation ── */
+@keyframes uilFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

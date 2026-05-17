@@ -1,0 +1,74 @@
+{
+  "name": "@ui-looper/core",
+  "version": "1.0.0",
+  "description": "UI component library for Module Federation 2.0 — design system for @looper/* and beyond",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EvgenyAbc/ui-looper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/EvgenyAbc/ui-looper/issues"
+  },
+  "homepage": "https://github.com/EvgenyAbc/ui-looper#readme",
+  "sideEffects": [
+    "**/*.css",
+    "./src/**/*.css"
+  ],
+  "type": "module",
+  "main": "./dist/lib/index.js",
+  "module": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/lib/index.d.ts",
+      "default": "./dist/lib/index.js"
+    },
+    "./styles.css": "./dist/lib/styles.css",
+    "./tokens.css": "./src/styles/tokens.css",
+    "./primitives.css": "./src/styles/primitives.css"
+  },
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "build": "npm run build:mf",
+    "build:mf": "NODE_ENV=production rspack build",
+    "build:lib": "NODE_ENV=production rspack build -c rspack.lib.config.ts && tsc -p tsconfig.lib.json --emitDeclarationOnly",
+    "build:all": "npm run build:mf && npm run build:lib",
+    "storybook": "storybook dev -p 6006",
+    "build:storybook": "storybook build -o storybook-static",
+    "start": "serve dist -l 3030 -C --no-port-switching",
+    "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.storybook.json",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@module-federation/enhanced": "^2.4.0",
+    "@rspack/cli": "^2.0.3",
+    "@rspack/core": "^2.0.3",
+    "@rspack/dev-server": "^2.0.1",
+    "@storybook/addon-docs": "^10.4.0",
+    "@storybook/react": "^10.4.0",
+    "@storybook/react-vite": "^10.4.0",
+    "@types/node": "^25.8.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "concurrently": "^9.1.0",
+    "eslint": "^10.4.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "globals": "^17.6.0",
+    "serve": "^14.2.6",
+    "storybook": "^10.4.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.59.3",
+    "vite": "^5.0.0"
+  }
+}

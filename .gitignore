@@ -1,0 +1,9 @@
+node_modules/
+dist/
+@mf-types/
+storybook-static/
+tsconfig.tsbuildinfo
+*.log
+.DS_Store
+.opencode/
+.cursor/

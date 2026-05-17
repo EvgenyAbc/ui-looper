@@ -1,0 +1,233 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Button — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ *
+ *  All colors / spacing reference --uil-* custom properties from
+ *  tokens.css. No hardcoded values.
+ */
+
+/* ── Base button ── */
+.btn {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+
+  /* Reset */
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: var(--uil-font-weight-semibold);
+  line-height: 1;
+  text-decoration: none;
+  user-select: none;
+  white-space: nowrap;
+
+  /* Visual */
+  border-radius: var(--uil-radius-md);
+  transition:
+    background var(--uil-transition-fast),
+    color var(--uil-transition-fast),
+    border-color var(--uil-transition-fast),
+    box-shadow var(--uil-transition-fast),
+    opacity var(--uil-transition-fast);
+
+  /* A11y */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--uil-accent);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Sizes ── */
+.sizeSm {
+  padding: 0.3rem 0.75rem;
+  font-size: var(--uil-font-size-sm);
+  border-radius: var(--uil-radius-sm);
+  min-height: 2rem;
+}
+
+.sizeMd {
+  padding: 0.5rem 1rem;
+  font-size: var(--uil-font-size-md);
+  min-height: 2.5rem;
+}
+
+.sizeLg {
+  padding: 0.75rem 1.5rem;
+  font-size: var(--uil-font-size-lg);
+  border-radius: var(--uil-radius-lg);
+  min-height: 3rem;
+}
+
+/* ── Full width ── */
+.fullWidth {
+  display: flex;
+  width: 100%;
+}
+
+/* ── Variants ── */
+
+/* Primary: filled dark / light inverse */
+.variantPrimary {
+  background: var(--uil-primary);
+  color: var(--uil-primary-fg);
+  border-color: var(--uil-primary);
+}
+
+.variantPrimary:hover:not(:disabled) {
+  background: var(--uil-primary-hover);
+  border-color: var(--uil-primary-hover);
+}
+
+.variantPrimary:active:not(:disabled) {
+  background: var(--uil-primary-active);
+  border-color: var(--uil-primary-active);
+}
+
+/* Secondary: subtle surface */
+.variantSecondary {
+  background: var(--uil-bg-secondary);
+  color: var(--uil-fg);
+  border-color: var(--uil-border);
+}
+
+.variantSecondary:hover:not(:disabled) {
+  background: var(--uil-bg-tertiary);
+  border-color: var(--uil-border-hover);
+}
+
+.variantSecondary:active:not(:disabled) {
+  background: var(--uil-border);
+}
+
+/* Outline: transparent + border */
+.variantOutline {
+  background: transparent;
+  color: var(--uil-fg);
+  border-color: var(--uil-border-strong);
+}
+
+.variantOutline:hover:not(:disabled) {
+  background: var(--uil-bg-secondary);
+  border-color: var(--uil-accent);
+  color: var(--uil-accent);
+}
+
+.variantOutline:active:not(:disabled) {
+  background: var(--uil-accent-soft);
+  border-color: var(--uil-accent);
+}
+
+/* Ghost: transparent until hover */
+.variantGhost {
+  background: transparent;
+  color: var(--uil-fg-secondary);
+  border-color: transparent;
+}
+
+.variantGhost:hover:not(:disabled) {
+  background: var(--uil-bg-secondary);
+  color: var(--uil-fg);
+}
+
+.variantGhost:active:not(:disabled) {
+  background: var(--uil-bg-tertiary);
+}
+
+/* Danger: semantic red */
+.variantDanger {
+  background: var(--uil-danger);
+  color: var(--uil-danger-fg);
+  border-color: var(--uil-danger);
+}
+
+.variantDanger:hover:not(:disabled) {
+  background: var(--uil-danger-hover);
+  border-color: var(--uil-danger-hover);
+}
+
+.variantDanger:active:not(:disabled) {
+  background: var(--uil-danger-active);
+  border-color: var(--uil-danger-active);
+}
+
+/* ── Loading state ── */
+.loading {
+  position: relative;
+  cursor: wait;
+}
+
+/* ── Content ── */
+.content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* ── Icons ── */
+.iconLeft,
+.iconRight {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  font-size: 1.15em;
+}
+
+.iconLeft {
+  margin-right: 0.1em;
+}
+
+.iconRight {
+  margin-left: 0.1em;
+}
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  animation: uilSpin 0.6s linear infinite;
+}
+
+.spinnerSvg {
+  width: 1em;
+  height: 1em;
+}
+
+.spinnerCircle {
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  animation: uilSpinCircle 1.2s ease-in-out infinite;
+}
+
+@keyframes uilSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes uilSpinCircle {
+  0% {
+    stroke-dashoffset: 31.4;
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: 0;
+    transform: rotate(180deg);
+  }
+  100% {
+    stroke-dashoffset: -31.4;
+    transform: rotate(360deg);
+  }
+}

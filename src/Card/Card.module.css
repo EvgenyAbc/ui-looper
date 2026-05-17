@@ -1,0 +1,61 @@
+/*
+ * ═══════════════════════════════════════════════════════════════
+ *  Card — CSS Module
+ *  ═══════════════════════════════════════════════════════════════
+ */
+
+/* ── Root ── */
+.root {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--uil-radius-lg);
+  overflow: hidden;
+}
+
+/* ── Variants ── */
+.variantDefault {
+  background: var(--uil-bg);
+  border: 1px solid var(--uil-border);
+  box-shadow: var(--uil-shadow-sm);
+}
+
+.variantOutlined {
+  background: transparent;
+  border: 1px solid var(--uil-border);
+}
+
+.variantGhost {
+  background: transparent;
+  border: none;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--uil-space-4) var(--uil-space-5);
+  border-bottom: 1px solid var(--uil-border);
+  font-weight: var(--uil-font-weight-semibold);
+  font-size: var(--uil-font-size-lg);
+}
+
+/* ── Body ── */
+.body {
+  flex: 1;
+  padding: var(--uil-space-4) var(--uil-space-5);
+}
+
+.bodyNoPadding {
+  padding: 0;
+}
+
+/* ── Footer ── */
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: var(--uil-space-3) var(--uil-space-5);
+  border-top: 1px solid var(--uil-border);
+  background: var(--uil-bg-secondary);
+}
